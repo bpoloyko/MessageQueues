@@ -55,8 +55,8 @@ namespace DataProcessing
                 {
                     bytes.AddRange(messageChunk.Body);
                 }
-                using var fileStream = new FileStream($"{_path}\\{fileName}", FileMode.Create, FileAccess.Write);
-                fileStream.Write(bytes.ToArray());
+
+                File.WriteAllBytes($"{_path}\\{fileName}", bytes.ToArray());
             }
         }
     }

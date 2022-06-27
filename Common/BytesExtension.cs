@@ -19,7 +19,7 @@ namespace Common
                 };
             }
 
-            var size = data.Length / Chunk.MaxChunkSize;
+            var size = (int) Math.Ceiling((double) data.Length / Chunk.MaxChunkSize);
 
             for (var i = 0; i < size; i++)
             {
